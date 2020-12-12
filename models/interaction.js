@@ -1,14 +1,9 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const Interaction = sequelize.define("Interaction", {
     isLiked: DataTypes.BOOLEAN,
+    userId: DataTypes.INTEGER,
+    billId: DataTypes.INTEGER
   });
-
-  Interaction.associate = function (models) {
-    Interaction.belongsToMany(models.User, {
-      through: "BillInteractions",
-      foreignKey: "billId",
-    });
-  };
 
   return Interaction;
 };
