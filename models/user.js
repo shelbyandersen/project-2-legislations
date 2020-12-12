@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
@@ -7,9 +7,9 @@ module.exports = function (sequelize, DataTypes) {
     // TODO: Days of the week?
   });
 
-  User.associate = function (models) {
-    User.belongsToMany(models.Interaction, {
-      through: "BillInteractions",
+  User.associate = (models) => {
+    User.belongsToMany(models.Bill, {
+      through: "Interaction",
       foreignKey: "userId",
     });
   };
