@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
 
-  Interaction.associate = (models) => {
-    Interaction.belongsToMany(models.User, {
+  Bill.associate = (models) => {
+    Bill.belongsToMany(models.User, {
       through: "Interaction",
       foreignKey: "billId",
     });

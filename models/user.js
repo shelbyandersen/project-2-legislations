@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    // TODO: Days of the week?
   });
 
   User.associate = (models) => {
