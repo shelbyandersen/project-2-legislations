@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Interaction = sequelize.define("Interaction", {
-    isLiked: DataTypes.BOOLEAN,
-    userId: DataTypes.INTEGER,
-    billId: DataTypes.INTEGER
+    isLiked: { type: DataTypes.BOOLEAN, allowNull: false, },
+    userId: { type: DataTypes.INTEGER, allowNull: false, },
+    billId: { type: DataTypes.INTEGER, allowNull: false, },
   });
 
   return Interaction;
