@@ -13,7 +13,7 @@ router.post("/api/bill", async (req, res) => {
 
 router.get("/api/bill/:id", async (req, res) => {
   try {
-    const bill = await db.Bill.findAll({
+    const bill = await db.Bill.findOne({
       where: {
         id: req.params.id,
       },
