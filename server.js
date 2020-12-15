@@ -39,6 +39,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/legislation", (req, res) => {
+  res.render("legislation");
+});
+
 app.use(playerController);
 app.use(userController);
 app.use(billController);
