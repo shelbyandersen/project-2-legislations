@@ -1,0 +1,21 @@
+body {
+  background-color: #3c3f58;
+}
+.message-header {
+  margin-top: 50px;
+  background-color: aquamarine;
+}
+
+.message {
+  width: 50%;
+  margin: auto;
+  background-color: brown;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+/* footer {
+  background-color: brown !important;
+} */
