@@ -45,6 +45,10 @@ app.get("/legislation", (req, res) => {
 app.get("/account", (req, res) => {
   res.render("account");
 });
+
+app.get("/create", (req, res) => {
+  res.render("create");
+});
 app.use(playerController);
 app.use(userController);
 app.use(billController);
