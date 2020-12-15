@@ -6,6 +6,9 @@ p {
   color: white;
 }
 
+.noAccount {
+  color: black;
+}
 .message-header {
   margin-top: 50px;
   background-color: aquamarine;
