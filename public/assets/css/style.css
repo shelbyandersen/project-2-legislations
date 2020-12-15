@@ -1,6 +1,11 @@
 body {
   background-color: #3c3f58;
 }
+
+p {
+  color: white;
+}
+
 .message-header {
   margin-top: 50px;
   background-color: aquamarine;
