@@ -42,7 +42,9 @@ app.get("/", (req, res) => {
 app.get("/legislation", (req, res) => {
   res.render("legislation");
 });
-
+app.get("/account", (req, res) => {
+  res.render("account");
+});
 app.use(playerController);
 app.use(userController);
 app.use(billController);
