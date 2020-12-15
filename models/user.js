@@ -1,3 +1,4 @@
+var bcrypt = require("bcryptjs");
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     email: {
@@ -28,6 +29,15 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "userId",
     });
   };
-
+  
+  User.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+  User.addHook("beforeCreate", function(user) {
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  });
+  User.addHook("beforeValidate", function(user) {
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  });
   return User;
 };
