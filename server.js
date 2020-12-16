@@ -47,8 +47,11 @@ app.get("/account", (req, res) => {
 });
 
 app.get("/create", (req, res) => {
+  console.log("inside server")
   res.render("create");
 });
+
+
 app.use(playerController);
 app.use(userController);
 app.use(billController);
