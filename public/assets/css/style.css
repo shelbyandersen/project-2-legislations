@@ -24,6 +24,10 @@ form {
   margin-bottom: 30px;
 }
 
+.modal-content {
+  width: 850px;
+}
+
 /* footer {
   background-color: brown !important;
 } */
