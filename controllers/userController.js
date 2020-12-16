@@ -4,6 +4,7 @@ const db = require("../models");
 
 router.post("/api/user", async (req, res) => {
   try {
+    console.log(req.body)
     const user = await db.User.create(req.body);
     res.json(user);
   } catch (err) {
