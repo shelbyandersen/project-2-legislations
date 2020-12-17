@@ -24,8 +24,26 @@ form {
   margin-bottom: 30px;
 }
 
-.modal-content {
-  width: 850px;
+.columns {
+  margin-top: 2%;
+}
+
+.card-feed {
+  margin: 20px;
+  border-radius: 10px;
+  background: #707793;
+}
+
+.bill-status {
+  background: #2e3047;
+}
+
+.is-info {
+  text-align: center;
+}
+
+.accordions {
+  padding-top: 40px;
 }
 
 /* footer {

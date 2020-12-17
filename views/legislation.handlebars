@@ -1,52 +1,119 @@
 {{> navbar}}
 
+<!--Desktop View-->
 <div class="columns">
     <!--legislation-cards-->
-    <div class="column is-one-third">
-        <div class="columns is-mobile">
-            <div class="column bill-name">
-                <p class="bd-notification is-info">Bill</p>
+    <aside class="is-hidden-mobile">
+        <div class="column card-feed">
+            <div class="columns">
+                <div class="column bill-name">
+                    <p class="bd-notification is-info">Bill</p>
+                </div>
+                <div class="column bill-status">
+                    <p class="bd-notification is-info">Status</p>
+                </div>
             </div>
-            <div class="column bill-status">
-                <p class="bd-notification is-info">Status</p>
-            </div>
+            <p class="bill-info">A BILL to be entitled an Act to amend Part 3 of Article 16 of Chapter 2 of Title 20 of
+                the
+                Official Code of Georgia Annotated, relating to the health of students generally, so as to require the
+                Department of Education, in consultation with the Department of Behavioral Health and Developmental
+                Disabilities and others.</p>
         </div>
-        <p class="bill-info">A BILL to be entitled an Act to amend Part 3 of Article 16 of Chapter 2 of Title 20 of the
-            Official Code of Georgia Annotated, relating to the health of students generally, so as to require the
-            Department of Education, in consultation with the Department of Behavioral Health and Developmental
-            Disabilities and others.</p>
-    </div>
+    </aside>
 
 
     <!--legislation-feed-->
-    <div class="column is-two-quarters">
-        <div class="columns is-mobile">
-            <div class="column bill-name-main">
-                <p class="bd-notification is-info">Bill</p>
+    <section class="is-hidden-mobile">
+        <div class="column is-two-quarters">
+            <div class="columns">
+                <div class="column bill-name-main">
+                    <p class="bd-notification is-info">Bill</p>
+                </div>
+                <div class="column bill-status-main">
+                    <p class="bd-notification is-info">Status</p>
+                </div>
             </div>
-            <div class="column bill-status-main">
-                <p class="bd-notification is-info">Status</p>
+            <p class="bill-info-main">A BILL to be entitled an Act to amend Part 3 of Article 16 of Chapter 2 of Title
+                20 of
+                the Official Code of Georgia Annotated, relating to the health of students generally, so as to require
+                the
+                Department of Education, in consultation with the Department of Behavioral Health and Developmental
+                Disabilities and others, to develop guidelines for the use of telehealth services in public schools to
+                provide mental health and behavioral health services to students at school or during any school related
+                function; to define the term "telehealth"; to provide for related matters; to repeal conflicting laws;
+                and
+                for other purposes.</p>
+            <div class="columns">
+                <div class="column bill-name-main">
+                    <p class="bd-notification is-info bill-date">Date</p>
+                    <p class="bd-notification is-info is-hidden-mobile">House Prefiled</p>
+                </div>
+                <div class="column bill-status-main">
+                    <p class="bd-notification is-info">
+                        <i class="far fa-thumbs-up fa-3x bill-like"></i>
+                        <i class="far fa-thumbs-down fa-3x bill-dislike"></i></p>
+                </div>
             </div>
         </div>
-        <p class="bill-info-main">A BILL to be entitled an Act to amend Part 3 of Article 16 of Chapter 2 of Title 20 of
-            the Official Code of Georgia Annotated, relating to the health of students generally, so as to require the
-            Department of Education, in consultation with the Department of Behavioral Health and Developmental
-            Disabilities and others, to develop guidelines for the use of telehealth services in public schools to
-            provide mental health and behavioral health services to students at school or during any school related
-            function; to define the term "telehealth"; to provide for related matters; to repeal conflicting laws; and
-            for other purposes.</p>
-        <div class="columns is-mobile">
-            <div class="column bill-name-main">
-                <p class="bd-notification is-info">Bill</p>
-                <p class="bd-notification is-info">House Prefiled</p>
-            </div>
-            <div class="column bill-status-main">
-                <p class="bd-notification is-info">
-                    <i class="far fa-thumbs-up fa-3x bill-like"></i>
-                    <i class="far fa-thumbs-down fa-3x bill-dislike"></i></p>
-            </div>
-        </div>
-    </div>
+    </section>
 </div>
 
+
+
+<!--Mobile View-->
+<section class="accordions is-hidden-desktop is-hidden-tablet column-car-feed-mobile">
+    <article class="accordion is-active">
+        <div class="accordion-header toggle bill-name-mobile">
+            <p>Bill Name</p>
+        </div>
+        <div class="accordion-body">
+            <div class="accordion-content bill-info-mobile">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>,
+                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam
+                gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>,
+                in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id
+                porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            </div>
+        </div>
+    </article>
+    <article class="accordion">
+        <div class="accordion-header">
+            <p>Bill Name</p>
+            <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+            <div class="accordion-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>,
+                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam
+                gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>,
+                in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id
+                porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            </div>
+        </div>
+    </article>
+    <article class="accordion">
+        <div class="accordion-header">
+            <p>Bill Name</p>
+            <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+            <div class="accordion-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>,
+                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam
+                gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>,
+                in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id
+                porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            </div>
+        </div>
+    </article>
+</section>
+
+</section>
+
 {{> footer}}
+<script src="https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/js/bulma-accordion.min.js"></script>
+
+<script>$(document).ready(function () {
+        var accordions = bulmaAccordion.attach();
+    });
+</script>
