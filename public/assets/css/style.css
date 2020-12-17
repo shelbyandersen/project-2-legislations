@@ -1,5 +1,10 @@
+html {
+  background-color: #3c3f58 !important;
+}
 body {
   background-color: #3c3f58;
+  background-size: cover !important;
+  height: 100% !important;
 }
 
 p {
@@ -9,15 +14,16 @@ p {
 .noAccount {
   color: black;
 }
-.message-header {
-  margin-top: 50px;
+/* .message-header {
+  margin-top: 150px;
   background-color: aquamarine;
-}
+} */
 
 .message {
   width: 50%;
   margin: auto;
   background-color: brown;
+  margin-bottom: 30% !important;
 }
 
 form {
@@ -46,6 +52,12 @@ form {
   padding-top: 40px;
 }
 
-/* footer {
-  background-color: brown !important;
-} */
+footer {
+  margin-top: 30px !important;
+  background-color: #fb8472 !important;
+  height: 50px !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  /* z-index: 100 !important; */
+}
