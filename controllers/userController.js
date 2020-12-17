@@ -4,7 +4,7 @@ const db = require("../models");
 
 router.post("/api/user", async (req, res) => {
   try {
-    console.log(req.body)
+    console.log(req.body);
     const user = await db.User.create(req.body);
     res.json(user);
   } catch (err) {
@@ -21,14 +21,14 @@ router.get("/api/user", async (req, res) => {
   }
 });
 
-router.get("/api/user/:id", async (req, res) => {
+router.get("/user/:id", async (req, res) => {
   try {
     const user = await db.User.findOne({
       where: {
         id: req.params.id,
       },
     });
-    res.json(user);
+    res.render("account", user.dataValues);
   } catch (err) {
     res.send(err);
   }
