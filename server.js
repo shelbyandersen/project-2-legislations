@@ -7,7 +7,7 @@ const {
 const db = require("./models");
 const app = express();
 
-const playerController = require("./controllers/playerController");
+const viewController = require("./controllers/viewController")
 const userController = require("./controllers/userController");
 const billController = require("./controllers/billController");
 const interactionController = require("./controllers/interactionController")
@@ -32,41 +32,14 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// ROUTES
-
-// Views Routes
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.get("/legislation", (req, res) => {
-  res.render("legislation");
-});
-app.get("/account", (req, res) => {
-  res.render("account");
-});
-
-app.get("/create", (req, res) => {
-  console.log("inside server")
-  res.render("create");
-});
 
 
-app.use(playerController);
 app.use(userController);
 app.use(billController);
-app.use(interactionController)
+app.use(interactionController);
+app.use(viewController);
 
-// API Routes
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
-  });
-});
 
-app.post("/api/test", (req, res) => {
-  console.log(req.body);
-});
 // db.sequelize.sync({ force: true }).then(() => {
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
