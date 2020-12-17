@@ -4,8 +4,10 @@ const db = require("../models");
 
 router.post("/api/bill", async (req, res) => {
   try {
-    const bill = await db.Bill.create(req.body);
-    res.json(bill);
+    const bills = await db.Bill.bulkCreate(req.body.bills, {
+      updateOnDuplicate: ["status"],
+    });
+    res.json(bills)
   } catch (err) {
     res.send(err);
   }
