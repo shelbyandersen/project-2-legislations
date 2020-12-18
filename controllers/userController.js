@@ -50,10 +50,10 @@ router.get("/api/user/:username", async (req, res) => {
   }
 });
 
-router.put("/api/user/:id", async (req, res) => {
+router.put("/api/user/:username", async (req, res) => {
   try {
     const usersUpdated = await db.User.update(req.body, {
-      where: { id: req.params.id },
+      where: { username: req.params.username },
     });
     res.json(usersUpdated);
   } catch (err) {
@@ -61,15 +61,16 @@ router.put("/api/user/:id", async (req, res) => {
   }
 });
 
-router.delete("/api/user/:id", async (req, res) => {
+router.delete("/api/user/:username", async (req, res) => {
   try {
     const usersDeleted = await db.User.destroy({
-      where: { id: req.params.id },
+      where: { username: req.params.username },
     });
     res.json(usersDeleted);
   } catch (err) {
     res.send(err);
   }
 });
+
 
 module.exports = router;
