@@ -32,6 +32,9 @@ passport.use(new LocalStrategy(
       else {
           return done(null, dbUser);
       }
+    }).then(function(dbUser){
+      console.log(dbUser);
+      
     }).catch(function(err) {
       console.log(err);
     });

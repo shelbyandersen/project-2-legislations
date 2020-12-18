@@ -15,6 +15,8 @@ $(document).ready(function() {
       return;
     }
 
+    localStorage.setItem('currentUser',userData.username);
+    
     // If we have an username and password we run the loginUser function and clear the form
     loginUser(userData.username, userData.password);
     usernameInput.val("");

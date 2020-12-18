@@ -37,11 +37,11 @@ router.get("/api/user", async (req, res) => {
   }
 });
 
-router.get("/user/:id", async (req, res) => {
+router.get("/api/user/:username", async (req, res) => {
   try {
     const user = await db.User.findOne({
       where: {
-        id: req.params.id,
+        username: req.params.username,
       },
     });
     res.render("account", user.dataValues);

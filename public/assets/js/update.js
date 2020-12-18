@@ -1,8 +1,17 @@
 $(document).ready(function () {
-  
+    let username = localStorage.getItem('currentUser');
+    $("#account-btn").on("click", function (e) {
+        e.preventDefault();
+        $.ajax("/api/user/" + username, {
+            type: "GET"
+          })
+          .then(function(response) {
+            console.log(response);
+            window.location.replace("api/user/" + username);
+          });
+    });
     $("#edit-btn").on("click", function (e) {
       e.preventDefault();
-      var id = 1;
       var updatedUser = {
       email: $("#email").val().trim(),
       password: $("#password").val().trim(),
