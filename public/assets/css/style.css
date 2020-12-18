@@ -28,6 +28,11 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
+aside {
+  height: 1000px;
+  overflow-y: scroll;
+}
+
 .noAccount {
   color: black;
 }
@@ -152,6 +157,18 @@ p {
 
 .fa-thumbs-up {
   margin-right: 4%;
+}
+
+.accordion-header,
+.toggle,
+.bill-name-mobile {
+  padding: 1em 0.75em !important;
+}
+
+.fa-plus {
+  background: #fb8472;
+  border-radius: 21px;
+  padding: 2px;
 }
 
 .bill-main-bottom {
