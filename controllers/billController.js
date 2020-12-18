@@ -13,6 +13,15 @@ router.post("/api/bill", async (req, res) => {
   }
 });
 
+router.get("/legislation", async (req, res) => {
+  try {
+    const bills = await db.Bill.findAll();
+    res.render("legislation", {legislation: bills});
+  } catch (err) {
+    res.send(err);
+  }
+})
+
 router.get("/api/bill/:id", async (req, res) => {
   try {
     const bill = await db.Bill.findOne({
