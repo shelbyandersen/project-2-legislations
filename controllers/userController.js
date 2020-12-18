@@ -1,14 +1,31 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const passport = require("../config/passport");
 
-router.post("/api/user", async (req, res) => {
-  try {
-    const user = await db.User.create(req.body);
-    res.json(user);
-  } catch (err) {
-    res.send(err);
-  }
+router.post("/api/login", passport.authenticate("local"), function(req, res) {
+  res.json(req.user);
+});
+
+router.post("/api/signup", function(req, res) {
+  db.User.create({
+    username: req.body.username,
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email
+  })
+    .then(function() {
+      res.redirect(307, "/api/login");
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    });
+});
+
+router.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
 });
 
 router.get("/api/user", async (req, res) => {
