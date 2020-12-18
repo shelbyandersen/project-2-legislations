@@ -1,35 +1,14 @@
 <!-- Nav Bar -->
 <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="../legislation">
-      <img class="logo" src="/assets/css/logo2.png" /> </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-
-      <a class="navbar-item" href="../account"> <i class="far fa-user"></i> </a>
-      {{!-- <a class="navbar-item"> <i class="fas fa-home"></i></a> --}}
-      <a class="navbar-item" id="showModal"><i class="fas fa-info-circle"></i> </a>
+    <div href="" class="navbar-item">
+      <h1 class="title has-background-dark">NEON Peach</h1>
     </div>
-    <div class="nav-center">
-      <a href="" class="navbar-item">
-        <h1 class="title has-text-white has-background-dark">NEON Peach</h1>
-      </a>
-    </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <button href="" class="button login is-light"> Log in </button>
-        </div>
-      </div>
-    </div>
+    <a class="navbar-item" href="../legislation"><img class="logo" src="/assets/css/logo2.png" /> </a>
+    <a class="navbar-item login" href="/"><i class="fas fa-sign-in-alt"></i></a>
+    <a class="navbar-item" href="../account"> <i class="far fa-user"></i> </a>
+    <a class="navbar-item" id="showModal"><i class="fas fa-info-circle"></i> </a>
+
   </div>
 </nav>
 
@@ -44,37 +23,9 @@
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(
-      document.querySelectorAll(".navbar-burger"),
-      0
-    );
-
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-      // Add a click event on each of them
-      $navbarBurgers.forEach((el) => {
-        el.addEventListener("click", () => {
-          // Get the target from the "data-target" attribute
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          el.classList.toggle("is-active");
-          $target.classList.toggle("is-active");
-        });
-      });
-    }
-  });
-
-  // Modal
-  $("#showModal").click(function () {
+<script> $("#showModal").click(function () {
     $(".modal").addClass("is-active");
   });
-
   $(".modal-close").click(function () {
     $(".modal").removeClass("is-active");
-  });
-</script>
+  });</script>
