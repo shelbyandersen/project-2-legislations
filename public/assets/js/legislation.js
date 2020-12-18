@@ -2,11 +2,28 @@ const API_KEY = "1746e141194bb3c5a7187530792f8912";
 const STATE = "GA";
 
 $(document).ready(async () => {
+  const decodeBillStatus = (statusNum) => {
+    switch (statusNum) {
+      case 1:
+        return "Introduced";
+      case 2:
+        return "Engrossed";
+      case 3:
+        return "Enrolled";
+      case 4:
+        return "Passed";
+      case 5:
+        return "Vetoed";
+      case 6:
+        return "failed";
+    }
+  };
+
   const constructBillModelObject = ({ bill }) => {
     return {
       name: bill.bill_number,
       id: bill.bill_id,
-      status: bill.status,
+      status: decodeBillStatus(bill.status),
       title: bill.title,
       description: bill.description,
     };
@@ -36,9 +53,8 @@ $(document).ready(async () => {
 
   const response = await $.ajax("/api/bill", {
     type: "POST",
-    data: {bills: specificBills},
+    data: { bills: specificBills },
   });
-  console.log(response)
 });
 
 

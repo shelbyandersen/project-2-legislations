@@ -6,10 +6,6 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/legislation", (req, res) => {
-  res.render("legislation");
-});
-
 router.get("/account", (req, res) => {
   res.render("account");
 });
