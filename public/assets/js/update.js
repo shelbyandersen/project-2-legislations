@@ -1,5 +1,7 @@
 $(document).ready(function () {
+
     let username = localStorage.getItem('currentUser');
+
     $("#account-btn").on("click", function (e) {
         e.preventDefault();
         $.ajax("/api/user/" + username, {
@@ -10,6 +12,14 @@ $(document).ready(function () {
             window.location.replace("api/user/" + username);
           });
     });
+
+    $("#dlt-btn").on("click", function (e) {
+        e.preventDefault();
+        $.ajax("/api/user/" + username, { type: "DELETE" });
+        window.location.replace("/");
+        localStorage.clear();
+    });
+
     $("#edit-btn").on("click", function (e) {
       e.preventDefault();
       var updatedUser = {
@@ -26,7 +36,7 @@ $(document).ready(function () {
       console.log(updatedUser.lastName);
       console.log(updatedUser.username)
       
-      $.ajax("/api/user/" + id, {
+      $.ajax("/api/user/" + username, {
         type: "PUT",
         data: updatedUser
       })
@@ -34,9 +44,5 @@ $(document).ready(function () {
         console.log(response)
         window.location.reload();
       });
-   
-    
     });
   });
-  
-  
