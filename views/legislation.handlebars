@@ -9,7 +9,7 @@
         <div class="column card-feed" data-bill-id="{{id}}">
             <div class="columns">
                 <div class="column bill-name">
-                    <h2 class="bd-notification is-info">Bill</h2>
+                    <h2 class="bd-notification is-info">{{name}}</h2>
                 </div>
                 <div class="column bill-status">
                     <h2 class="bd-notification is-info">{{status}}</h2>
@@ -62,7 +62,9 @@
         <div class="accordion-body">
             <p class="accordion-content bill-info-mobile">{{title}}
             </p>
-            <p class="accordion-content bill-info-mobile">{{description}}
+            <p class="accordion-content bill-info-mobile">{{description}}<br><br>
+                <i class="far fa-thumbs-up fa-2x bill-like"></i>
+                <i class="far fa-thumbs-down fa-2x bill-dislike"></i>
             </p>
         </div>
     </article>

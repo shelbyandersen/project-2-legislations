@@ -25,6 +25,7 @@
                             <label class="label">User Name</label>
                             <input type="text" class="input  is-black" autocomplete="on" id="username"
                                 value="{{username}}">
+                            <p class="black-text is-italic">Username must be between 4 and 36 characters</p>
                         </div>
                         <div class="field">
                             <label class="label">Email Address</label>
@@ -34,10 +35,12 @@
                             <label class="label">Password</label>
                             <input type="password" class="input  is-black" autocomplete="on" id="password"
                                 value="{{password}}">
+                            <p class="black-text is-italic">Password must be between 9 and 128 characters</p>
                         </div>
                         <div class="field">
                             <label class="label">Confirm Password</label>
-                            <input type="password" class="input  is-black" autocomplete="on" value="{{password}}">
+                            <input type="password" class="input  is-black" id="password1" autocomplete="on"
+                                value="{{password}}">
                         </div>
 
 
@@ -45,7 +48,8 @@
 
                     <div class="buttons has-addons is-centered">
 
-                        <button href="" type="submit" class="submit button is-outlined is-dark">Submit</button>
+                        <button href="" id="createbtn" type="submit"
+                            class="submit button is-outlined is-dark">Submit</button>
                     </div>
 
                 </div>

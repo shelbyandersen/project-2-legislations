@@ -1,6 +1,8 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
+var session = require("express-session");
 const handlebars = require("handlebars");
+const passport = require("./config/passport");
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
@@ -13,6 +15,11 @@ const billController = require("./controllers/billController");
 const interactionController = require("./controllers/interactionController")
 
 const PORT = process.env.PORT || 8080;
+
+// Passport Middleware 
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // MIDDLEWARE
 // Handle POST body
