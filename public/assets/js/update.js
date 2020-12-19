@@ -4,6 +4,7 @@ $(document).ready(function () {
   $("#account-btn").on("click", function (e) {
     e.preventDefault();
     if(!username){
+        alert("You must be logged in to view account information.");
         return;
     }
     $.ajax("/api/user/" + username, {

@@ -21,6 +21,7 @@ router.get("/legislation", isAuthenticated, async (req, res) => {
     res.render("legislation", {legislation: bills});
   } catch (err) {
     res.send(err);
+    alert("Log in first!");
   }
 })
 
