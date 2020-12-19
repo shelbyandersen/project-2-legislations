@@ -37,7 +37,7 @@ router.get("/api/user", async (req, res) => {
   }
 });
 
-router.get("/api/user/:username", passport.authenticate("local"), async (req, res) => {
+router.get("/api/user/:username", async (req, res) => {
   try {
     const user = await db.User.findOne({
       where: {

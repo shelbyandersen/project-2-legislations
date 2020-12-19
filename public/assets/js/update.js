@@ -3,16 +3,19 @@ $(document).ready(function () {
 
   $("#account-btn").on("click", function (e) {
     e.preventDefault();
-    // if (localStorage["username"] == "null") {
-    //   window.location.replace("/create");
-    // } else {
+    if(!username){
+        return;
+    }
     $.ajax("/api/user/" + username, {
-      type: "GET",
-    }).then(function (response) {
-      console.log(response);
-      window.location.replace("api/user/" + username);
-    });
-  });
+        type: "GET"
+      })
+      .then(function(response) {
+        console.log(response);
+        window.location.replace("api/user/" + username);
+      }).catch(function(){
+          window.location.reload();
+      });
+});
 
   $("#dlt-btn").on("click", function (e) {
     e.preventDefault();
