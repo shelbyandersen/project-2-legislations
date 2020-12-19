@@ -9,7 +9,7 @@
         <div class="column card-feed">
             <div class="columns">
                 <div class="column bill-name">
-                    <h2 class="bd-notification is-info">Bill</h2>
+                    <h2 class="bd-notification is-info">{{name}}</h2>
                 </div>
                 <div class="column bill-status">
                     <h2 class="bd-notification is-info">Status</h2>
@@ -44,7 +44,7 @@
                 for other purposes.</p>
             <div class="columns bill-main-bottom">
                 <div class="column bill-date-main">
-                    <h1 class="bd-notification is-info bill-date">Date</h1>
+                    <h1 class="bd-notification is-info bill-date">12-19-2020</h1>
                     <h1 class="bd-notification is-info is-hidden-mobile">House Prefiled</h1>
                 </div>
                 <div class="column bill-liked-main">
@@ -71,7 +71,9 @@
         <div class="accordion-body">
             <p class="accordion-content bill-info-mobile">{{title}}
             </p>
-            <p class="accordion-content bill-info-mobile">{{description}}
+            <p class="accordion-content bill-info-mobile">{{description}}<br><br>
+                <i class="far fa-thumbs-up fa-2x bill-like"></i>
+                <i class="far fa-thumbs-down fa-2x bill-dislike"></i>
             </p>
         </div>
     </article>
