@@ -56,7 +56,9 @@ aside {
 .title {
   color: #fb8472;
 }
-
+#login-btn {
+  margin-top: 20px;
+}
 #edit-btn {
   margin-top: 20px;
 }
