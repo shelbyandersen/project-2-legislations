@@ -41,8 +41,8 @@ module.exports = (sequelize, DataTypes) => {
   User.addHook("beforeCreate", function(user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
-  // User.addHook("beforeValidate", function(user) {
-  //   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-  // });
+  User.addHook("afterUpdate", function(user) {
+    user.password = bcrypt.hashSync(user.previous.password, bcrypt.genSaltSync(10), null);
+  });
   return User;
 };
