@@ -3,9 +3,6 @@ $(document).ready(function () {
   var usernameInput = $("#username-input");
   var passwordInput = $("#password-input");
 
-  if (localStorage.hasOwnProperty("username")) {
-    alert("hey");
-  }
   submit.on("click", function (event) {
     event.preventDefault();
     var userData = {
@@ -33,7 +30,7 @@ $(document).ready(function () {
       .then(function () {
         window.location.replace("/legislation");
         // If there's an error, log the error
-      .catch(function(err) {
+      }).catch(function(err) {
         alert("Incorrect Username or Password. Please try again!")
         console.log(err);
       });

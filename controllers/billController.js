@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+
 router.post("/api/bill", async (req, res) => {
   try {
     const bills = await db.Bill.bulkCreate(req.body.bills, {
@@ -13,7 +15,7 @@ router.post("/api/bill", async (req, res) => {
   }
 });
 
-router.get("/legislation", async (req, res) => {
+router.get("/legislation", isAuthenticated, async (req, res) => {
   try {
     const bills = await db.Bill.findAll();
     res.render("legislation", {legislation: bills});
