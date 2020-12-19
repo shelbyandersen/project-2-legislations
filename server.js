@@ -32,13 +32,10 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-
-
 app.use(userController);
 app.use(billController);
 app.use(interactionController);
 app.use(viewController);
-
 
 // db.sequelize.sync({ force: true }).then(() => {
 db.sequelize.sync().then(() => {
