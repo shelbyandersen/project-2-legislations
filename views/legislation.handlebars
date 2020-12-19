@@ -4,15 +4,15 @@
 
 <div class="columns">
     <!--legislation-cards-->
-    <aside class="is-hidden-mobile">
+    <aside id="sidebar" class="is-hidden-mobile">
         {{#each legislation}}
-        <div class="column card-feed">
+        <div class="column card-feed" data-bill-id="{{id}}">
             <div class="columns">
                 <div class="column bill-name">
                     <h2 class="bd-notification is-info">{{name}}</h2>
                 </div>
                 <div class="column bill-status">
-                    <h2 class="bd-notification is-info">Status</h2>
+                    <h2 class="bd-notification is-info">{{status}}</h2>
                 </div>
             </div>
             <p class="bill-info">{{title}}</p>
@@ -22,30 +22,20 @@
 
 
     <!--legislation-feed-->
+    {{#with bill}}
     <section class="is-hidden-mobile">
         <div class="column is-two-quarters">
             <div class="columns bill-header-main">
                 <div class="column bill-name-main">
-                    <h1 class="bd-notification is-info bill-main">Bill</h1>
+                    <h1 class="bd-notification is-info bill-main">{{name}}</h1>
                 </div>
                 <div class="column bill-status-main is-one-quarter">
-                    <h1 class="bd-notification is-info">Status</h1>
+                    <h1 class="bd-notification is-info">{{status}}</h1>
                 </div>
             </div>
-            <p class="bill-info-main">A BILL to be entitled an Act to amend Part 3 of Article 16 of Chapter 2 of Title
-                20 of
-                the Official Code of Georgia Annotated, relating to the health of students generally, so as to require
-                the
-                Department of Education, in consultation with the Department of Behavioral Health and Developmental
-                Disabilities and others, to develop guidelines for the use of telehealth services in public schools to
-                provide mental health and behavioral health services to students at school or during any school related
-                function; to define the term "telehealth"; to provide for related matters; to repeal conflicting laws;
-                and
-                for other purposes.</p>
+            <p class="bill-info-main">{{description}}</p>
             <div class="columns bill-main-bottom">
                 <div class="column bill-date-main">
-                    <h1 class="bd-notification is-info bill-date">12-19-2020</h1>
-                    <h1 class="bd-notification is-info is-hidden-mobile">House Prefiled</h1>
                 </div>
                 <div class="column bill-liked-main">
                     <p class="bd-notification is-info">
@@ -56,6 +46,7 @@
             </div>
         </div>
     </section>
+    {{/with}}
 </div>
 
 

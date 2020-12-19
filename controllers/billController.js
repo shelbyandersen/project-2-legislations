@@ -18,20 +18,21 @@ router.post("/api/bill", async (req, res) => {
 router.get("/legislation", isAuthenticated, async (req, res) => {
   try {
     const bills = await db.Bill.findAll();
-    res.render("legislation", {legislation: bills});
+    res.render("legislation", {legislation: bills, bill: bills[0]});
   } catch (err) {
     res.send(err);
   }
 })
 
-router.get("/api/bill/:id", async (req, res) => {
+router.get("/legislation/:id", async (req, res) => {
   try {
+    const bills = await db.Bill.findAll();
     const bill = await db.Bill.findOne({
       where: {
         id: req.params.id,
       },
     });
-    res.json(bill);
+    res.render("legislation", {legislation: bills, bill: bill.dataValues});
   } catch (err) {
     res.send(err);
   }
