@@ -3,9 +3,6 @@ $(document).ready(function () {
   var usernameInput = $("#username-input");
   var passwordInput = $("#password-input");
 
-  if (localStorage.hasOwnProperty("username")) {
-    alert("hey");
-  }
   submit.on("click", function (event) {
     event.preventDefault();
     var userData = {
